@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon hotelmanagementbackend/server",
-    "client": "npm start --prefix hotelmanagementfrontend",
+    "server": "nodemon Eventmanagementbackend/server",
+    "client": "npm start --prefix Eventmanagementfrontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix hotelmanagementfrontend && npm run build --prefix hotelmanagementfrontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Eventmanagementfrontend && npm run build --prefix Eventmanagementfrontend"
   },
   "author": "",
   "license": "ISC",

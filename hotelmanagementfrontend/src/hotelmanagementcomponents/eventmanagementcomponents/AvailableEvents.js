@@ -93,6 +93,7 @@ return (
 <th Scope="col">Add Services</th>
 <th Scope="col">Additional Services</th>
 <th Scope="col">Discribe Your Event</th>
+<th Scope="col">Discount</th>
 
 </tr>
 </thead>
@@ -116,6 +117,8 @@ return (
 <td>{posts.AddServices}</td>
 <td>{posts.AdditionalServices}</td>
 <td>{posts.DiscribeYourEvent}</td>
+<td>{posts.Discount}</td>
+
 
 
 <td>
@@ -133,6 +136,7 @@ return (
 </table>
 <br/>
 <button className="btn btn-success"><a href="/AddEvent" style={{textDecoration:'none',color:'white'}}>Create New Package</a></button>
+
 
 </div>
 )

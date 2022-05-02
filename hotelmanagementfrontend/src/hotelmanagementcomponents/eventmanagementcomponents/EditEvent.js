@@ -16,6 +16,7 @@ export default class EditEvent extends Component {
             AddServices:"",
             AdditionalServices:"",
             DiscribeYourEvent:"",
+            Discount:""
            
         }
         }
@@ -33,21 +34,40 @@ export default class EditEvent extends Component {
         e.preventDefault();
         const id = this.props.match.params.id;
         
-        const {Category,Capacity,SelectHalls, Servingn,SelectSeatingStyles, DecorationInformations,AddServices, AdditionalServices,DiscribeYourEvent} = this.state;
+        const {Category,Capacity,SelectHalls, Serving,SelectSeatingStyles, DecorationInformations,AddServices, AdditionalServices,DiscribeYourEvent,Discount} = this.state;
         
         const data ={
             Category: Category,
             Capacity:Capacity,
             SelectHalls:SelectHalls,
-            Servingn:Servingn,
+            Serving:Serving,
             SelectSeatingStyles:SelectSeatingStyles,
             DecorationInformations:DecorationInformations,
             AddServices:AddServices, 
             AdditionalServices:AdditionalServices,
             DiscribeYourEvent:DiscribeYourEvent,
+            Discount:Discount
            
         }
         console.log(data)
+
+        if(Category==""||Capacity==""||SelectHalls==""||Serving==""||SelectSeatingStyles==""||DecorationInformations==""||AddServices==""||AdditionalServices==""||DiscribeYourEvent==""){
+            alert("Insert all details")
+            
+            }else if(Capacity>600){
+            
+            
+              
+              alert("maximum capacity 600 !")
+              return 0;
+
+
+            }else if(Discount>30)
+
+            {
+            alert("!maximum discount is only 30%")
+              return 0;
+            }
         
         axios.put(`http://localhost:8070/Event/update/${id}`,data).then((res) =>{
         if(res.data.success){
@@ -65,7 +85,8 @@ alert("Post Updated Successfully")
             AdditionalServices:"",
             DiscribeYourEvent:"",
             AdditionalPersonPrice:"",
-            ExtraBedPrice:""
+            ExtraBedPrice:"",
+            Discount:""
         }
         )
         }
@@ -90,6 +111,7 @@ alert("Post Updated Successfully")
         AddServices:res.data.post.AddServices,
        AdditionalServices:res.data.post.AdditionalServices,
        DiscribeYourEvent:res.data.post.DiscribeYourEvent,
+       Discount:res.data.post.Discount
        
        
        
@@ -109,103 +131,129 @@ alert("Post Updated Successfully")
 
 render() {
 return (
-    <div container style={{marginLeft:"200px", marginTop:"-1360px"}}>
-<div className="col-md-8 mt-4 mx-auto">
-    <h1 className="h3 mb-3 font-weight-normal">Edit Post</h1>
-    <form className="needs-validation" noValidate>
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>Category</label>
-<input type="text"
-className="form-contorl"
-name="Category"
-placeholder="Enter Topic"
-value={this.state.Category}
-onChange={this.handleInputChange}/>
-</div>
+    <div style={{marginLeft:"100px", marginTop:"-1360px"}}>
 
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>Capacity</label>
-<input type="text"
-className="form-contorl"
-name="Capacity"
-placeholder="Enter Description"
-value={this.state.Capacity}
-onChange={this.handleInputChange}/>
-</div>
+  <div >
+          
+  
+       </div>
+  
+       <div className="col-md-8 mt-4 mx-auto">
+       <h1 style={{color:'DarkGoldenrod', fontWeight:'bold'}}>Edit Basic Package &nbsp;<i class="fas fa-hand-point-down"></i></h1>
+           <form className="needs-validation" noValidate>
+            <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Category</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="Category"
+                   placeholder=""
+                   value={this.state.Category}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
+  
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Capacity</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="Capacity"
+                   placeholder=""
+                   value={this.state.Capacity}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
+  
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Select Halls</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="SelectHalls"
+                   placeholder=""
+                   value={this.state.SelectHalls}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
+  
+               
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Serving</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="Serving"
+                   placeholder=""
+                   value={this.state.Serving}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
+  
+               
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Select Seating Styles</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="SelectSeatingStyles"
+                   placeholder=""
+                   value={this.state.SelectSeatingStyles}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
+  
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b>Decoration Informations</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="DecorationInformations"
+                   placeholder=""
+                   value={this.state.DecorationInformations}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
+  
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Add Services</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="AddServices"
+                   placeholder=""
+                   value={this.state.AddServices}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
+  
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b>Additional Services</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="AdditionalServices"
+                   placeholder=""
+                   value={this.state.AdditionalServices}
+                   onChange={this.handleInputChange}/>
+  
+               </div>
 
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>SelectHalls</label>
-<input type="text"
-className="form-contorl"
-name="SelectHalls"
-placeholder="Enter Post Category"
-value={this.state.SelectHalls}
-onChange={this.handleInputChange}/>
-</div>
+               <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Description</b></label>
+                   <textarea type="text"
+                   className="form-control"
+                   name="DiscribeYourEvent"
+                   placeholder=""
+                   value={this.state.DiscribeYourEvent}
+                   onChange={this.handleInputChange}/>
+                   
+                   </div>
 
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>Serving</label>
-<input type="text"
-className="form-contorl"
-name="Serving"
-placeholder="Enter Post Category"
-value={this.state.Serving}
-onChange={this.handleInputChange}/>
-</div>
-
-
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>SeatingStyles</label>
-<input type="text"
-className="form-contorl"
-name="SeatingStyles"
-placeholder="Enter Post Category"
-value={this.state.SeatingStyles}
-onChange={this.handleInputChange}/>
-</div>
-
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>DecorationInformations</label>
-<input type="text"
-className="form-contorl"
-name="DecorationInformations"
-placeholder="Enter Post Category"
-value={this.state.DecorationInformations}
-onChange={this.handleInputChange}/>
-</div>
-
-
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>AddServices</label>
-<input type="text"
-className="form-contorl"
-name="AddServices"
-placeholder="Enter Post Category"
-value={this.state.AddServices}
-onChange={this.handleInputChange}/>
-</div>
-
-
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>AdditionalServices</label>
-<input type="text"
-className="form-contorl"
-name="AdditionalServices"
-placeholder="Enter Post Category"
-value={this.state.AdditionalServices}
-onChange={this.handleInputChange}/>
-</div>
-
-
-<div className="form-group" style={{marginBottom:'15px'}}>
-<label style={{marginBottom:'5px'}}>DiscribeYourEvent</label>
-<input type="text"
-className="form-contorl"
-name="DiscribeYourEvent"
-placeholder="Enter Post Category"
-value={this.state.DiscribeYourEvent}
-onChange={this.handleInputChange}/>
-</div>
+                   
+               
+                   <div className="form-group" style={{marginBottom:'15px',backgroundColor:'#F3FADD'}}>
+                 <label style={{marginBottom:'5px',fontSize:'20px'}}><b> Discount</b></label>
+                   <input type="text"
+                   className="form-control"
+                   name="Discount"
+                   placeholder=""
+                   value={this.state.Discount}
+                   onChange={this.handleInputChange}/>
+                   
+                   </div>
 
 
 
