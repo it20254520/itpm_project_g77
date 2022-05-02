@@ -1,0 +1,14 @@
+.dashboardbackground1{
+/* background-image: url("E:\itp_project-itp2021_s2_b02_g11\Hotel Management System\hotelmanagementfrontend\src\hotelmanagementcomponents\images\image4.jpg"); */
+background-image: url("./images/image4.jpg");
+opacity: 1;
+background-size: 170%;
+height: 800px;
+width: auto;
+margin-top: 0px; 
+background-repeat: no-repeat;
+}
+
+
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
