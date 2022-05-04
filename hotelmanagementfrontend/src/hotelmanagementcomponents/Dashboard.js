@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './DashboardCss.css';
-import img2 from './images/room1.jpg';
-import img3 from './images/imagebackground.jpg';
+import img45 from './images/img45.jpg';
+import img3 from './images/img465.jpg';
 
 
 
@@ -19,7 +19,7 @@ return (
 <div class="w3-content" style={{maxWidth:"1400px"}}>
 
 <header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>AMALYA REACH HOLIDAY RESORT</b></h1>
+  <h1><b>CandyLand Events</b></h1>
   <p>Welcome to the your next home</p>
 </header>
 
@@ -37,9 +37,7 @@ return (
     </div>
 
     <div class="w3-container">
-      <p style={{textAlign:"justify"}}>Finding the right space for your event is never easy and getting advice from friends, family, clients, co-workers or anyone is always great. we at amalya provides you a life time experience with our brand new wedding reception hallsand holiday resort which can be used for a memorable day in your life.
-
-First, it's always best to shop around for several locations to see what's on offer (and within budget) and always consider booking your party venue at least several months to a year in advance, say the experts. Take your time, and don't settle for the first location that comes along. Unusual venues like historic mansions, galleries, and even sailing yachts can provide memorable party spaces. Before you make the final decision, also remember to take into account who is on your guest list, and how accessible it may be for everyone involved.</p>
+      <p style={{textAlign:"justify"}}> We specializes in a range of Event management solutions from weddings ,conferences, exhibitions and other corporate functions alongside private functions such as Birthdays, Dinner dances and batch reunions etc. Our professional team comprising of energetic, youthful and dedicated individuals, who are available 24 hours of the day to take care of any last minute changes and to manage on site coordination on the day of the event. From the moment the initial briefings are carried out, you can simply sit back relax and count on our experienced and dedicated team of Event Planners to create a stress free and tailor made event. Our team will take you through each aspect leading to the event, from deciding on venues and themes to other useful information to provide you with a comprehensive and customized result that only the best in the island can provide.Speak to our experienced, committed and enthusiastic team today regarding your upcoming event!</p>
       
     </div>
   </div>
@@ -53,7 +51,7 @@ First, it's always best to shop around for several locations to see what's on of
 <div class="w3-col l4">
 
   <div class="w3-card w3-margin w3-margin-top" style={{width:"400px"}}>
-  <img src={img2} style={{width:"100%"}}/>
+  <img src={img45} style={{width:"100%"}}/>
     <div class="w3-container w3-white">
       <h4><b>About Us</b></h4>
       <p className="fas fa-building"> No:556, Moragahahena, Pitipana North, Homagama, Sri Lanka</p><br/>
@@ -70,17 +68,13 @@ First, it's always best to shop around for several locations to see what's on of
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <a href="/RoomsForBooking" style={{textDecoration:"none"}}><li class="w3-padding-16">
-      <li class="w3-xxlarge"><i class="	fas fa-bed" aria-hidden="true"></i>
-        <span class="w3-large" style={{marginLeft:"50px"}}>Room Booking</span><br/></li>
+      
       </li></a>
       <a href="" style={{textDecoration:"none"}}><li class="w3-padding-16">
       <li class="w3-xxlarge"><i class="	fas fa-door-open"></i>
         <span class="w3-large" style={{marginLeft:"50px"}}>Event Booking</span><br/></li>
       </li></a>
-      <a href="" style={{textDecoration:"none"}}><li class="w3-padding-16">
-      <li class="w3-xxlarge"><i class="fas fa-utensils"></i>
-        <span class="w3-large" style={{marginLeft:"70px"}}>Food Order</span><br/></li>
-      </li></a> 
+      
        
     </ul>
   </div>
